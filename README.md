@@ -1,4 +1,5 @@
 # kotlindogdemo
-illustrates an issue with a simple relationship
+This is a simple spring boot / kotlin / neo4j example of a relationship.
+Many thanks to Gerrit Meier for his assistance.
 
-This is a simple spring boot / kotlin / neo4j example of a relationship that does not seem to work.
+See https://community.neo4j.com/t/spring-data-neo4j-with-kotlin-relation-example/33678

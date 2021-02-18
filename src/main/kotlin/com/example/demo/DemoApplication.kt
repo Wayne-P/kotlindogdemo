@@ -26,7 +26,7 @@ class DemoApplication{
             dogRepository.save<Dog>(dogFido)
             val dogRover = Dog(name = "rover")
             val kennelForRover = Kennel(dog = dogRover)
-            // kennelforRover does not save correctly
+            // kennelforRover saves correctly as well now
             kennelRepository.save<Kennel>(kennelForRover)
             print("complete")
         }

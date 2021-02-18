@@ -6,12 +6,4 @@ import org.springframework.data.neo4j.core.schema.Node
 import org.springframework.data.neo4j.core.schema.Relationship
 
 @Node
-data class Kennel constructor (@Id @GeneratedValue val id: Long? = null, @Relationship val dog: Dog) {
-    fun withId(id: Long): Kennel {
-        return if (this.id == id) {
-            this
-        } else {
-            this.copy(id = id)
-        }
-    }
-}
+data class Kennel constructor (@Id @GeneratedValue val id: Long? = null, @Relationship(type="IS_HOME_OF") val dog: Dog)
