@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional
 @SpringBootApplication
 @EnableNeo4jRepositories
 @Transactional
-@EnableTransactionManagement
 class DemoApplication{
     @Bean
     fun init (kennelRepository: KennelRepository, dogRepository:DogRepository): CommandLineRunner {
@@ -23,9 +22,11 @@ class DemoApplication{
             kennelRepository.deleteAll()
             dogRepository.deleteAll ()
             val dogFido = Dog(name = "fido")
+            // fido saves correctly
             dogRepository.save<Dog>(dogFido)
             val dogRover = Dog(name = "rover")
             val kennelForRover = Kennel(dog = dogRover)
+            // kennelforRover does not save correctly
             kennelRepository.save<Kennel>(kennelForRover)
             print("complete")
         }
