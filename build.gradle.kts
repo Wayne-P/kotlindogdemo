@@ -13,10 +13,13 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://repo.spring.io/milestone") }
+    maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-neo4j")
+//        implementation("org.springframework.boot:spring-boot-starter-data-neo4j")
+    implementation("org.springframework.data:spring-data-neo4j:6.0.4")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
